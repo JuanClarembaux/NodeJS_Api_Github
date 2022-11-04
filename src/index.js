@@ -1,5 +1,6 @@
 import app from './app.js'
 import { sequelize } from './database/database.js'
+import { PORT } from './config.js'
 
 //import './models/Usuario.js'
 
@@ -9,8 +10,8 @@ async function main(){
         await sequelize.sync({force: false});
         console.log("Connection has been established succesfully");
 
-        app.listen(3000)
-        console.log('Server is listening on port', 3000);
+        app.listen(PORT)
+        console.log('Server is listening on port', PORT);
 
     } catch (error) {
 
